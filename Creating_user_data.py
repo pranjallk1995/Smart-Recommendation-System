@@ -5,6 +5,15 @@ Created on Wed Mar 13 12:37:18 2019
 @author: Pranjall
 """
 
+"""
+Intution: Few users were studied to identify their personality types. For the sake of demonstration, 6 personality types have been assumed.
+          
+          These users were then asked five thoughtful questions (pertaining psychology analysis) and their responses were observed.
+          
+          This dataset is then used to train an Artificial Neural Network to find a relationship between the personality types and the responses,
+          so that the personality types of the new users can be predicted based on their responses to those five questions.
+"""
+
 import numpy as np
 import pandas as pd
 
