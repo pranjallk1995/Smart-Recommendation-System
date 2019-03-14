@@ -1,9 +1,9 @@
 # Smart-Recommendation-System
 A recommendation system that recommends products to customers by learning their psychology.
 
-Important: Dataset was too large to upload, hence not present here.
+Important: Original dataset 'Amazon_Fine_Food_data.csv' was too large to upload, hence not present here.
 
-1.) Get the dataset and make sure the file name is 'Amazon_Fine_Food_data.csv'.
+1.) Get the dataset and make sure the file name is 'Amazon_Fine_Food_data_2.csv'.
 
 2.) Put the dataset and both the code files in the same directory.
 
