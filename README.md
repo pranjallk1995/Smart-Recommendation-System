@@ -5,7 +5,7 @@ Important: Original dataset 'Amazon_Fine_Food_data.csv' was too large to upload,
 
 1.) Get the dataset and make sure the file name is 'Amazon_Fine_Food_data_2.csv'.
 
-2.) Put the dataset and both the code files in the same directory.
+2.) Put the dataset and all the code files in the same directory.
 
 3.) First run 'Creating_user_data.py' to create a sample dataset of users and their presonality types, 'Amazon_user_data.csv'.
     This data represents already studied users and forms the training/testing data for the following presonality predition model.
