@@ -9,6 +9,7 @@ Created on Wed Mar 13 01:25:06 2019
 
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 import time
 
 def sigmoid(x):
@@ -36,6 +37,7 @@ class NeuralNetwork:
         self.nodes_in_second_layer = 5
         self.nodes_in_output_layer = 6
         self.output = np.zeros(y.shape)
+        self.error_values = []
         
         upper_limit = 0.5
         lower_limit = -0.5
@@ -55,10 +57,13 @@ class NeuralNetwork:
         self.layer3 = sigmoid(np.dot(self.layer2, self.weights3) + self.bias3)
         
         return self.layer3
+    
+    def error(self):
+        return -(1 / self.output.shape[0]) * np.sum((self.y * np.log(self.output)) + ((1 - self.y) * np.log(1 - self.output)))
      
     def backprop(self):
         
-        learning_rate = 0.2
+        learning_rate = 0.1
         
         d_Propogation3 = self.output - self.y
         d_weights3 = (1 / self.output.shape[0]) * (np.dot(d_Propogation3.T, self.layer2))
@@ -83,9 +88,10 @@ class NeuralNetwork:
         
     def simulate(self):
         self.output = self.forwardprop()
+        self.error_values.append(self.error())
         self.backprop()
         
-        return self.output
+        return self.output, self.error_values
     
     def run(self, test):
         
@@ -93,7 +99,7 @@ class NeuralNetwork:
         self.layer2 = ReLU(np.dot(self.layer1, self.weights2) + self.bias2)
         self.layer3 = sigmoid(np.dot(self.layer2, self.weights3) + self.bias3)
         
-        return self.layer3
+        return self.layer3, self.weights1
     
 
 
@@ -138,13 +144,21 @@ if __name__ == '__main__':
 
     for i in range(0, iterations):
         print('Iteration: ' + str(i+1) + ' / ' + str(iterations))
-        output = NN.simulate()
+        output, error_values = NN.simulate()
+        
+    #plotting graph.
+    interation_values = np.arange(1, iterations + 1)
+    plt.plot(interation_values, error_values, c = 'red')
+    plt.xlabel('Iterations')
+    plt.ylabel('Error')
+    plt.title('Convergence of error')
+    plt.show()
         
     #storing execution time.
     execution_time = time.time() - start_time
     
     #simulating the Neural Network on test data.
-    output = NN.run(X_test)
+    output, W = NN.run(X_test)
     result = np.zeros_like(output)
     result[np.arange(len(output)), output.argmax(1)] = 1
     
