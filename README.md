@@ -12,3 +12,5 @@ Important: Original dataset 'Amazon_Fine_Food_data.csv' was too large to upload,
     
 4.) Now run 'User_psychology_prediction_system.py' to train an Artificial Neural Network that predicts users personality type.
     An accuracy of appox. 85% is achieved.
+    
+5.) Finally, run the 'Smart_recommendation_system.csv' file to get the recommended items for specific personality types, sorted based on product rating.
