@@ -99,7 +99,7 @@ class NeuralNetwork:
         self.layer2 = ReLU(np.dot(self.layer1, self.weights2) + self.bias2)
         self.layer3 = sigmoid(np.dot(self.layer2, self.weights3) + self.bias3)
         
-        return self.layer3, self.weights1
+        return self.layer3
     
 
 
@@ -158,7 +158,7 @@ if __name__ == '__main__':
     execution_time = time.time() - start_time
     
     #simulating the Neural Network on test data.
-    output, W = NN.run(X_test)
+    output = NN.run(X_test)
     result = np.zeros_like(output)
     result[np.arange(len(output)), output.argmax(1)] = 1
     
