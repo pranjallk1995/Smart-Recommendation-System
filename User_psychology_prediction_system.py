@@ -63,7 +63,7 @@ class NeuralNetwork:
      
     def backprop(self):
         
-        learning_rate = 0.1
+        learning_rate = 0.07
         
         d_Propogation3 = self.output - self.y
         d_weights3 = (1 / self.output.shape[0]) * (np.dot(d_Propogation3.T, self.layer2))
@@ -136,8 +136,8 @@ if __name__ == '__main__':
     X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.2)
     
     #simulating the Neural Network.
-    NN = NeuralNetwork(X_train, Y_train)
     iterations = 800
+    NN = NeuralNetwork(X_train, Y_train)
     
     #monitoring execution time.
     start_time = time.time()
