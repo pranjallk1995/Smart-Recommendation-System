@@ -131,7 +131,7 @@ if __name__ == '__main__':
     
     #simulating the Neural Network.
     NN = NeuralNetwork(X_train, Y_train)
-    iterations = 1000
+    iterations = 800
     
     #monitoring execution time.
     start_time = time.time()
