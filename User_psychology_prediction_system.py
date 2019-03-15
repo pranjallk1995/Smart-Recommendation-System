@@ -58,7 +58,7 @@ class NeuralNetwork:
      
     def backprop(self):
         
-        learning_rate = 0.1
+        learning_rate = 0.2
         
         d_Propogation3 = self.output - self.y
         d_weights3 = (1 / self.output.shape[0]) * (np.dot(d_Propogation3.T, self.layer2))
