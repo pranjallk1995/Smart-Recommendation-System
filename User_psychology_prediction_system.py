@@ -117,7 +117,6 @@ if __name__ == '__main__':
     #converting to numpy arrays.
     X = np.array(X)
     Y = np.array(Y)
-    m = len(Y)
     
     #feature scaling.
     from sklearn.preprocessing import StandardScaler
