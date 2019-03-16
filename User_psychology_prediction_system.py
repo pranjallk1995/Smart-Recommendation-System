@@ -111,12 +111,6 @@ if __name__ == '__main__':
     X = dataset.iloc[:, 1 : 6]
     Y = dataset.iloc[:, 6]
     
-    #normalizing data.
-    from sklearn.preprocessing import StandardScaler
-    X_sc = StandardScaler()
-    X = X.astype('float')
-    X = pd.DataFrame(X_sc.fit_transform(X))
-    
     #categorical data.
     Y = pd.get_dummies(Y, columns=['PersonalityType'], prefix = ['Type']) 
     
