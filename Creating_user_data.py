@@ -18,7 +18,7 @@ import numpy as np
 import pandas as pd
 
 dataset = pd.read_csv('Amazon_Fine_Food_data.csv') 
-dataset = dataset.drop(columns = ['Summary', 'Text', 'Time', 'Id', 'ProfileName'])
+#dataset = dataset.drop(columns = ['Summary', 'Text', 'Time', 'Id', 'ProfileName'])
 
 dataset_by_user = dataset.groupby('UserId')
 
