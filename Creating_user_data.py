@@ -17,7 +17,7 @@ Intution: Few users were studied to identify their personality types. For the sa
 import numpy as np
 import pandas as pd
 
-dataset = pd.read_csv('Amazon_Fine_Food_data.csv') 
+dataset = pd.read_csv('Amazon_Fine_Food_data_2.csv') 
 
 dataset_by_user = dataset.groupby('UserId')
 
